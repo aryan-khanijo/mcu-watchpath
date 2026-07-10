@@ -1,0 +1,20 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "mcu-watchpath",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2025-07-09",
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "mcu-watchpath-db",
+      "database_id": "9c1ad739-1e3b-4c76-804f-c594a2bf37be"
+    }
+  ]
+}

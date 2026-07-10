@@ -3,24 +3,34 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev --turbopack",
     "build": "next build",
+    "build:worker": "opennextjs-cloudflare build",
+    "preview": "opennextjs-cloudflare build && wrangler dev",
+    "deploy": "npm run build && opennextjs-cloudflare build && wrangler deploy",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 execute mcu-watchpath-db --local --file=./drizzle/migrations/0000_dear_penance.sql",
+    "db:seed:local": "wrangler d1 execute mcu-watchpath-db --local --file=./seed.sql"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.1",
+    "drizzle-orm": "^0.45.2",
+    "jose": "^6.2.3",
     "next": "16.2.10",
     "react": "19.2.4",
     "react-dom": "19.2.4"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4",
+    "@cloudflare/workers-types": "^4.20260702.1",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^4.107.1"
   }
 }
