@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "mcu-watchpath",
+  "name": "steep-feather-818a",
   "main": ".open-next/worker.js",
   "compatibility_date": "2025-07-09",
   "compatibility_flags": [
