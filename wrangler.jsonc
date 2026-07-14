@@ -2,7 +2,7 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "steep-feather-818a",
   "main": ".open-next/worker.js",
-  "compatibility_date": "2025-07-09",
+  "compatibility_date": "22026-06-26",
   "compatibility_flags": [
     "nodejs_compat"
   ],
@@ -16,5 +16,11 @@
       "database_name": "mcu-watchpath-db",
       "database_id": "9c1ad739-1e3b-4c76-804f-c594a2bf37be"
     }
-  ]
+  ],
+  "observability": {
+    "enabled": false,
+    "logs": {
+      "enabled": false
+    }
+  }
 }
